@@ -1,0 +1,276 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(230, 17%, 14%);
+    font-family: 'Inter', sans-serif;
+    color: hsl(228, 34%, 66%);
+}
+
+body.light {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(228, 12%, 44%);
+}
+
+.background-box {
+    max-width: 1440px;
+    width: 100%;
+    height: 245px;
+    position: absolute;
+    z-index: -1;
+    background-color: hsl(232, 19%, 15%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+}
+.light .background-box {
+    background-color: hsl(225, 100%, 98%);
+}
+
+.container {
+    width: auto;
+    max-width: 1110px;
+    margin: 35px auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.header__title {
+    font-size: 26px;
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+}
+
+.light .header__title {
+    color: hsl(230, 17%, 14%);
+}
+
+.header__subtext,
+.toggle__label,
+.card__overview-type {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.toggle__label {
+    margin-right: 10px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle__button-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.toggle__button {
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    background-color: hsl(210, 75%, 63%);
+    background: linear-gradient(90deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+    display: inline-block;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.toggle__button::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: hsl(230, 17%, 14%);
+    display: block;
+}
+
+.toggle__checkbox {
+    z-index: 1;
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    right: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.toggle__checkbox:checked +
+.toggle__button {
+    background: hsl(230, 22%, 74%);
+}
+
+.toggle__checkbox:checked +
+.toggle__button::after {
+    margin-left: auto;
+    background-color: hsl(0, 0%, 100%); 
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 25px;
+    margin-top: 45px;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background-color: hsl(228, 28%, 20%);
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+.light .card {
+    background-color: hsl(227, 47%, 96%);
+}
+
+.card::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card__column {
+    display: grid;
+    grid-row-gap: 25px;
+    text-align: left;
+}
+
+.card__column:nth-child(2) {
+    text-align: right;
+}
+
+.card__overview-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    line-height: 0.9em;
+}
+
+.light .card__overview-value {
+    color: hsl(230, 17%, 14%);
+}
+
+.card--columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card--colorful::before {
+    background: hsl(37, 97%, 70%);
+    background: linear-gradient(90deg, hsl(36, 82%, 69%) 0%, hsl(329, 70%, 58%) 100%);
+}
+
+.card--blue::before {
+    background-color: hsl(195, 92%, 49%);
+}
+
+.card--red::before {
+    background-color: hsl(356, 87%, 40%);
+}
+
+.social-media-tag {
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media-tag__image {
+    margin-right: 10px;
+}
+
+.followers {
+    margin: 25px auto;
+}
+
+.followers__number {
+    display: block;
+    font-size: 60px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+
+.light .followers__number {
+    color: hsl(230, 17%, 14%);
+}
+
+.followers__subtext {
+    font-size: 12px;
+    letter-spacing: 6px;
+}
+
+.change {
+    color: hsl(163, 72%, 41%);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.change--negative {
+    color: hsl(356, 69%, 56%);
+}
+
+.bottom-cards {
+    margin-top: 50px;
+}
+
+.bottom-cards__title {
+    font-size: 24px;
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+}
+
+.light .bottom-cards__title {
+    color: hsl(230, 17%, 14%);
+}
+
+@media (max-width: 960px) {
+    .container {
+        margin-top: 10px;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .header__left {
+        flex-basis: 100%;
+        border-bottom: solid 1px hsl(228, 34%, 66%);
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .toggle {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
